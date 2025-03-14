@@ -1,0 +1,22 @@
+{
+  "name": "pkg-pr-new-publishconfig",
+  "version": "1.0.0",
+  "packageManager": "pnpm@9.3.0",
+  "main": "./index.ts",
+  "exports": {
+    ".": "./index.ts"
+  },
+  "publishConfig": {
+    "access": "public",
+    "main": "./index.js",
+    "exports": {
+      ".": "./index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.2"
+  }
+}
