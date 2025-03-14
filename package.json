@@ -6,7 +6,7 @@
     "build": "pnpm -r build"
   },
   "devDependencies": {
-    "b": "https://pkg.pr.new/zirkelc/pkg-pr-new-publishconfig/b@3ae53e3",
+    "@arethetypeswrong/cli": "^0.15.4",
     "tsup": "^8.4.0",
     "typescript": "^5.8.2"
   }

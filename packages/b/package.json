@@ -23,7 +23,8 @@
     }
   },
   "scripts": {
-    "build": "tsup src/index.ts --format esm,cjs"
+    "build": "tsup && pnpm pack | tail -n1 | xargs attw",
+    "prepublishOnly": "pnpm build"
   },
   "devDependencies": {
     "typescript": "^5.8.2"
