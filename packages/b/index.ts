@@ -1,7 +1,6 @@
-export const greet = (name: string) => {
-  return `Hello, ${name}!`;
-};
+import { goodbye, greet } from "a";
 
-export const goodbye = (name: string) => {
-  return `Goodbye, ${name}!`;
+export const main = () => {
+  greet("world");
+  goodbye("world");
 };
