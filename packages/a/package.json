@@ -2,19 +2,25 @@
   "name": "a",
   "version": "1.0.1",
   "packageManager": "pnpm@9.3.0",
-  "main": "./index.ts",
+  "type": "module",
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
   "exports": {
-    ".": "./index.ts"
+    ".": "./src/index.ts"
   },
   "publishConfig": {
     "access": "public",
-    "main": "./index.js",
+    "main": "./dist/index.cjs",
+    "module": "./dist/index.js",
     "exports": {
-      ".": "./index.js"
+      ".": {
+        "require": "./dist/index.cjs",
+        "import": "./dist/index.js"
+      }
     }
   },
   "scripts": {
-    "build": "tsc"
+    "build": "tsup src/index.ts --format esm,cjs"
   },
   "devDependencies": {
     "typescript": "^5.8.2"

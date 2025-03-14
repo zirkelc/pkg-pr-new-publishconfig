@@ -5,19 +5,25 @@
   "files": [
     "dist"
   ],
-  "main": "./index.ts",
+  "type": "module",
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
   "exports": {
-    ".": "./index.ts"
+    ".": "./src/index.ts"
   },
   "publishConfig": {
     "access": "public",
-    "main": "./dist/index.js",
+    "main": "./dist/index.cjs",
+    "module": "./dist/index.js",
     "exports": {
-      ".": "./dist/index.js"
+      ".": {
+        "require": "./dist/index.cjs",
+        "import": "./dist/index.js"
+      }
     }
   },
   "scripts": {
-    "build": "tsc"
+    "build": "tsup src/index.ts --format esm,cjs"
   },
   "devDependencies": {
     "typescript": "^5.8.2"
