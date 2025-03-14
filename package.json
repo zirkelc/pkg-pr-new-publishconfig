@@ -1,22 +1,16 @@
 {
-  "name": "pkg-pr-new-publishconfig",
+  "name": "root",
   "version": "1.0.0",
   "packageManager": "pnpm@9.3.0",
-  "main": "./index.ts",
-  "exports": {
-    ".": "./index.ts"
-  },
-  "publishConfig": {
-    "access": "public",
-    "main": "./index.js",
-    "exports": {
-      ".": "./index.js"
-    }
-  },
   "scripts": {
-    "build": "tsc"
+    "build": "pnpm -r build"
   },
   "devDependencies": {
+    "@arethetypeswrong/cli": "^0.15.4",
+    "tsup": "^8.4.0",
     "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "aws-sigv4-fetch": "https://pkg.pr.new/zirkelc/aws-signature-v4/aws-sigv4-fetch@32"
   }
 }
