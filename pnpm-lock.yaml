@@ -7,10 +7,22 @@ settings:
 importers:
 
   .:
+    devDependencies:
+      typescript:
+        specifier: ^5.8.2
+        version: 5.8.2
+
+  packages/a:
+    devDependencies:
+      typescript:
+        specifier: ^5.8.2
+        version: 5.8.2
+
+  packages/b:
     dependencies:
-      pkg-pr-new-publishconfig:
-        specifier: https://pkg.pr.new/zirkelc/pkg-pr-new-publishconfig@1
-        version: https://pkg.pr.new/zirkelc/pkg-pr-new-publishconfig@1
+      a:
+        specifier: workspace:*
+        version: link:../a
     devDependencies:
       typescript:
         specifier: ^5.8.2
@@ -18,17 +30,11 @@ importers:
 
 packages:
 
-  pkg-pr-new-publishconfig@https://pkg.pr.new/zirkelc/pkg-pr-new-publishconfig@1:
-    resolution: {tarball: https://pkg.pr.new/zirkelc/pkg-pr-new-publishconfig@1}
-    version: 1.0.0
-
   typescript@5.8.2:
     resolution: {integrity: sha512-aJn6wq13/afZp/jT9QZmwEjDqqvSGp1VT5GVg+f/t6/oVyrgXM6BY1h9BRh/O5p3PlUPAe+WuiEZOmb/49RqoQ==}
     engines: {node: '>=14.17'}
     hasBin: true
 
 snapshots:
-
-  pkg-pr-new-publishconfig@https://pkg.pr.new/zirkelc/pkg-pr-new-publishconfig@1: {}
 
   typescript@5.8.2: {}
